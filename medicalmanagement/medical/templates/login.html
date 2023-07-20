@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0%
+        }
+        body{
+            background-image: url("https://images.pexels.com/photos/259915/pexels-photo-259915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+            background-size: 100% 740px;
+        }
+        .container{
+            width: 300px;
+            height: 400px;
+            background-color: black;
+            margin-left: 36%;
+            margin-top: 7%;
+            text-align: center;
+            color: white;
+        }
+        .container h1{
+            font-size: 36px;
+            color: aqua;
+        }
+        .container .text{
+            position: relative;
+            top: 7%;
+        }
+        .form-control{
+            border: none;
+            background-color: black;
+            border-bottom: 3px solid white;
+            width:250px;
+            font-size:18px;
+            margin-top: 40px;
+            outline: none;
+            color: white;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text">
+            <h1>Login</h1>
+        </div>
+   
+    <form role="form" method="post" name="frm" action="/login/" >
+       {%csrf_token%}
+       <div class="form-group">
+        <input type="text" class="form-control" id="uname" name="uname" placeholder="Enter your username">
+       </div><br>
+       <div class="form-group">
+        <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Enter your Password">
+       </div><br>
+       <div class="d-grid gap-2" >
+        <button class="btn btn-dark" type="submit">Login</button>
+        </div>
+        <br>
+        <p>New User?<a href="/signup">Signup</a></p>
+        <br><p>Back to<span><a href="/"></a></span></p>
+
+    </form>
+</div>
+</body>
+</html>

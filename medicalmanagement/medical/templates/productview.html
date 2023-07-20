@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+{%block body%}
+<center><h1>Medicine Details</h1></center> 
+<div class="container mt-2"> 
+<div class="row"> 
+{%for i in medical%} 
+<br><br> 
+<div class="card" style="width: 25rem;" > 
+<img class="card-img-top" src="{{i.image}}" alt="Card image cap" style="width: 15rem;"> <div class="card-body"> 
+<h5 class="card-title">{{i.name}}</h5> 
+<p class="card-text" style="font-size: small;">{{i.description}}</p> 
+<p class="card-text">Price:{{i.price}}</p> 
+<a href="/order" class="btn btn-danger">Add to Cart</a> 
+</div> 
+</div> 
+{% endfor %} 
+</div>
+</div> 
+{%endblock%}

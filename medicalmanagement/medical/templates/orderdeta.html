@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+{%block body%}
+ <div class="container mt-2">
+    <h2 class="display-4">
+        Order
+    </h2>
+    <table class="table table-stripped table-bordered table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th>OrderId</th>
+                <th>Name</th>
+                <th>Products</th>
+                <th>Price</th>
+                <th>Cancel</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in medsys%}
+            <tr>
+                <th scope="row">{{i.id}}</th>
+                 <td>{{i.name}}</td>
+                 <td>{{i.items}}</td>
+                 <td>{{i.price}}</td>
+                 {%if i.delivery%}
+                 <td><button type="button" class="btn-sucess p-2" disabled>
+                    <i class="fa-solid fa-trash-can">Cannot be deleted</i></button></td>
+                    {%else%}
+                    <td><a type="button" href="/myord/{{i.id}}" class="btn-danger">
+                        <i class="fa-solid fa-trash-can">Deleted</i></a></td>
+                        {%endif%}
+
+                        {%if i.delivery%}
+                        <td><i class="fa-solid fa-circle-check">Delivered</i></td>
+                        {%else%}
+                        <td><i class="fa-solid fa-trunck">Not Delivered</i></td>
+                        {%endif%}
+                     
+            </tr>
+            {%endfor%}
+
+        </tbody>
+    </table>
+ </div>
+
+{%endblock%}
